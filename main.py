@@ -12,11 +12,9 @@ SUPPORTED_DOMAINS = {
 bot = telebot.TeleBot(os.getenv('TELEGRAM_KEY'))
 url_helper = UrlHelper(SUPPORTED_DOMAINS.values())
 twitter_downloader = TwitterDownloader(
-  TwitterApi(os.getenv('TWITTER_API_KEY'), os.getenv('TWITTER_API_SECRET'),
+  TwitterApi(os.getenv('TWITTER_API_KEY'), os.getenv('TWITTER_API_SECRET')),
   url_helper
 )
-
-bot.polling(none_stop=True, interval=0)
 
 @bot.message_handler(content_types=['text'])
 def handle_message(message):
@@ -47,3 +45,5 @@ def get_video_downloader(url):
 
   if domain == SUPPORTED_DOMAINS['twitter']:
     return twitter_downloader
+
+bot.polling(none_stop=True, interval=0)
