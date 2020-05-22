@@ -1,6 +1,5 @@
 import os
 import telebot
-from enum import Enum
 from twitter_api import TwitterApi
 from twitter_downloader import TwitterDownloader
 from url_helper import UrlHelper
