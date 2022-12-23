@@ -1,0 +1,13 @@
+app = "videobot"
+kill_signal = "SIGINT"
+kill_timeout = 60
+processes = []
+
+[deploy]
+  strategy = "rolling"
+
+[env]
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
